@@ -2,14 +2,14 @@ package com.hy.zeusjetpackwanandroid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.hy.commom.network.ZeusRetrofit
-import com.hy.zeusjetpackwanandroid.api.HomeServices
 import com.hy.zeusjetpackwanandroid.databinding.ActivityMainBinding
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import com.hy.zeusjetpackwanandroid.viewmodel.HomeViewModel
 
 class MainActivity : AppCompatActivity() {
-	private lateinit var binding: ActivityMainBinding;
+	private lateinit var binding: ActivityMainBinding
+
+	private val homeViewModel by lazy { HomeViewModel() }
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		binding = ActivityMainBinding.inflate(layoutInflater)
@@ -20,10 +20,10 @@ class MainActivity : AppCompatActivity() {
 
 	private fun initEvent() {
 		binding.retrofitBtn.setOnClickListener {
-			GlobalScope.launch { // 在后台启动一个新的协程并继续
-				val a = ZeusRetrofit.getServices(HomeServices::class.java).getHomeArticle(0)
+			homeViewModel.getHomeData(0)
+			homeViewModel.currentName.observe(this) {
+				binding.tvContent.text = it.curPage.toString()
 			}
 		}
 	}
-
 }

@@ -39,8 +39,10 @@ object Libs {
 	const val moshi = "com.squareup.moshi:moshi-kotlin:${Versions.moshiVersion}"
 	const val converterMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.converterMoshiVersion}"
 	const val loggingInterceptor ="com.squareup.okhttp3:logging-interceptor:${Versions.loggingInterceptor}"
+	const val moshiKotlin = "com.squareup.moshi:moshi-kotlin:${Versions.moshiVersion}"
 
 	// 其他
 	const val arouterApi = "com.alibaba:arouter-api:${Versions.arouterApiVersion}"
 	const val arouterCompiler = "com.alibaba:arouter-compiler:${Versions.arouterCompilerVersion}"
+
 }

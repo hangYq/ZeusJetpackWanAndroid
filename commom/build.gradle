@@ -52,6 +52,7 @@ dependencies {
     api Libs.loggingInterceptor
     api Libs.kotlinxCoroutines
     api Libs.kotlinxCoroutinesAndroid
+    api Libs.moshiKotlin
     implementation(Libs.arouterApi)
     implementation(Libs.arouterCompiler)
 }

@@ -2,6 +2,7 @@ package com.hy.commom.network
 
 import com.hy.commom.network.config.Config
 import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -32,12 +33,13 @@ object ZeusRetrofit {
 	init {
 		mOkHttpClient = getOkHttpClient()
 		val moshi = Moshi.Builder()
+			.add(KotlinJsonAdapterFactory())
 			.build()
 
 		mRetrofit = Retrofit.Builder()
-			.baseUrl(Config.baseUrl)
 			.client(mOkHttpClient)
 			.addConverterFactory(MoshiConverterFactory.create(moshi))
+			.baseUrl(Config.baseUrl)
 			.build()
 	}
 
