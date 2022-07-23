@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk Versions.compileSdkVersion
 
     defaultConfig {
         applicationId "com.hy.zeusjetpackwanandroid"
-        minSdk 21
-        targetSdk 31
+        minSdk Versions.minSdkSdkVersion
+        targetSdk Versions.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -29,6 +29,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    viewBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
