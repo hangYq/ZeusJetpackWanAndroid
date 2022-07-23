@@ -1,23 +1,40 @@
-plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+if (isModule.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
 }
+apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
     compileSdk Versions.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.hy.zeusjetpackwanandroid"
+        if (isModule.toBoolean()) {
+            applicationId "com.hy.modulehome"
+        }
+
         minSdk Versions.minSdkSdkVersion
         targetSdk Versions.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
         kapt {
             arguments {
                 arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+    }
+
+
+    sourceSets {
+        main {
+            if (isModule.toBoolean()) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
             }
         }
     }
@@ -39,11 +56,10 @@ android {
     viewBinding {
         enabled = true
     }
-
 }
 
 dependencies {
-
+    implementation project(":commom")
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'com.google.android.material:material:1.4.0'
@@ -53,6 +69,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation(Libs.arouterApi)
     implementation(Libs.arouterCompiler)
-    implementation project(":commom")
-    implementation project(":modulehome")
 }
