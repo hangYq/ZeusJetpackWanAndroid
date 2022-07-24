@@ -6,6 +6,8 @@
 
 2. 由于使用组件化开发，组件独立运行前提就是需要是一个 application，而新建的 module 是一个 library ，所以要实现组件独立运行就需要使 module 可以在 library 和 application 之间随意切换，所以我们在 gradle.properties 中设置一个变量，用来进行标记是否可以以组件方式来进行运行。相关文档可以参考[8];
 
+3.使用 Navigation 创建底部导航，相关文档可以参考[9];
+
 ## 参考文档
 
 [1] [Use buildSrc to abstract imperative logic](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:build_sources)
@@ -23,3 +25,5 @@
 [7] [ARouter](https://github.com/alibaba/ARouter)
 
 [8] [为新设备添加模块](https://developer.android.com/studio/projects/add-app-module)
+
+[9] [Navigation 组件](https://developer.android.com/guide/navigation/navigation-getting-started?hl=zh-cn)

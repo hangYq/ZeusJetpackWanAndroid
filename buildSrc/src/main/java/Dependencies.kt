@@ -14,6 +14,7 @@ object Versions {
 	const val loggingInterceptor = "4.10.0"
 	const val arouterApiVersion = "1.5.2"
 	const val arouterCompilerVersion = "1.5.2"
+	const val navVersion = "2.5.0"
 }
 
 // 三方库管理
@@ -44,5 +45,9 @@ object Libs {
 	// 其他
 	const val arouterApi = "com.alibaba:arouter-api:${Versions.arouterApiVersion}"
 	const val arouterCompiler = "com.alibaba:arouter-compiler:${Versions.arouterCompilerVersion}"
+
+	// nav
+	const val navFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navVersion}"
+	const val navUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navVersion}"
 
 }
