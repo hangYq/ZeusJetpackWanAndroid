@@ -24,4 +24,11 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:text="测试 Retrofit" />
+    <Button
+        android:id="@+id/btnNavigator"
+        android:layout_marginVertical="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:text="ARouter 跳转测试" />
 </androidx.appcompat.widget.LinearLayoutCompat>

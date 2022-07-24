@@ -1,4 +1,4 @@
-package com.hy.modulehome
+package com.hy.module_home
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

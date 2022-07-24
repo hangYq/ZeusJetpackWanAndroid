@@ -1,4 +1,4 @@
-package com.hy.modulehome
+package com.hy.module_home
 
 import org.junit.Test
 

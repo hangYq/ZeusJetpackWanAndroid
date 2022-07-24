@@ -1,4 +1,4 @@
-package com.hy.modulehome
+package com.hy.module_home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

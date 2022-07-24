@@ -1,7 +1,6 @@
 package com.hy.zeusjetpackwanandroid.repository
 
 import com.hy.commom.network.BaseResponse
-import com.hy.commom.network.BaseResponseModel
 import com.hy.commom.network.BaseResult
 import com.hy.commom.network.ZeusRetrofit
 import com.hy.zeusjetpackwanandroid.api.HomeApi
@@ -13,7 +12,7 @@ class HomeRepository: BaseResponse() {
 
 
 	//	测试获取首页数据
-	suspend fun fetchHomeData( page: Int):BaseResult<HomeArticle> {
+	suspend fun fetchHomeData( page: Int): BaseResult<HomeArticle> {
 		return executeResponse(zeusRetrofit.getHomeArticle(page))
 	}
 }

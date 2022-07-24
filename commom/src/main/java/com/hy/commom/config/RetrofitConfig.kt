@@ -1,6 +1,6 @@
-package com.hy.commom.network.config
+package com.hy.commom.config
 
-class Config {
+class RetrofitConfig {
 	companion object {
 		val baseUrl: String = "https://www.wanandroid.com"
 	}
