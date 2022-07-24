@@ -15,6 +15,8 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/commom" />
             <option value="$PROJECT_DIR$/module_home" />
+            <option value="$PROJECT_DIR$/module_my" />
+            <option value="$PROJECT_DIR$/module_project" />
           </set>
         </option>
       </GradleProjectSettings>
