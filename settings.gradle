@@ -14,3 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ZeusJetpackWanAndroid"
 include ':app'
+include ':commom'
+include ':module_home'
+include ':module_project'
+include ':module_my'
