@@ -16,7 +16,7 @@ class HomeViewModel() : ViewModel(){
 	}
 
 	fun getHomeData(page:Int) {
-		viewModelScope.launch {
+		viewModelScope.launch (){
 			when(val result = homeRepository.fetchHomeData(page)) {
 				is BaseResult.Success -> {
 					Log.d("ddddd","${result.data?.curPage}")

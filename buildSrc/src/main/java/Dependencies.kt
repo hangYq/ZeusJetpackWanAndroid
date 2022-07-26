@@ -15,6 +15,8 @@ object Versions {
 	const val arouterApiVersion = "1.5.2"
 	const val arouterCompilerVersion = "1.5.2"
 	const val navVersion = "2.5.0"
+	const val youthBannerVersion = "2.2.2"
+	const val glideVersion = "4.13.2"
 }
 
 // 三方库管理
@@ -45,6 +47,9 @@ object Libs {
 	// 其他
 	const val arouterApi = "com.alibaba:arouter-api:${Versions.arouterApiVersion}"
 	const val arouterCompiler = "com.alibaba:arouter-compiler:${Versions.arouterCompilerVersion}"
+	const val youthBanner = "io.github.youth5201314:banner:${Versions.youthBannerVersion}"
+	const val glide ="com.github.bumptech.glide:glide:${Versions.glideVersion}"
+	const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glideVersion}"
 
 	// nav
 	const val navFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navVersion}"

@@ -6,6 +6,12 @@ if (isModule.toBoolean()) {
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
+buildscript{
+    repositories {
+        maven { url "https://s01.oss.sonatype.org/content/groups/public" }
+    }
+}
+
 android {
     compileSdk Versions.compileSdkVersion
 
@@ -68,5 +74,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation project(":commom")
     implementation(Libs.arouterApi)
+    implementation(Libs.youthBanner)
+    implementation(Libs.glide)
+    implementation(Libs.glideCompiler)
+    implementation(Libs.youthBanner)
     kapt(Libs.arouterCompiler)
 }
