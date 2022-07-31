@@ -1,4 +1,4 @@
-package com.hy.module_home.response
+package com.hy.module_home.bean
 
 import com.squareup.moshi.Json
 

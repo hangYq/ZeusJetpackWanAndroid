@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.hy.module_home.response.BannerItem
+import com.hy.module_home.bean.BannerItem
 import com.youth.banner.adapter.BannerAdapter
 import com.youth.banner.util.BannerUtils
 
