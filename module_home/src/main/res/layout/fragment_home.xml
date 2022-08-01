@@ -6,11 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.HomeFragment">
 
-<!--    <com.youth.banner.Banner-->
-<!--        android:id="@+id/banner"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="180dp"-->
-<!--        tools:ignore="MissingConstraints" />-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
