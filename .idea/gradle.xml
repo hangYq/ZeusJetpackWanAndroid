@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/module_home" />
             <option value="$PROJECT_DIR$/module_my" />
             <option value="$PROJECT_DIR$/module_project" />
+            <option value="$PROJECT_DIR$/module_webview" />
           </set>
         </option>
       </GradleProjectSettings>

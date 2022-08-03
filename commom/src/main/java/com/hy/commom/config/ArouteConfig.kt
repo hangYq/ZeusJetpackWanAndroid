@@ -22,4 +22,6 @@ object ArouterConfig {
 
     const val TEST_DETAIL = "/test/detail"
 
+    const val COMMON_WEBVIEW = "/common/webview"
+
 }

@@ -72,12 +72,12 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation project(":commom")
-    implementation(Libs.arouterApi)
     implementation(Libs.constraintlayout)
     implementation(Libs.youthBanner)
     implementation(Libs.glide)
     implementation(Libs.glideCompiler)
     implementation(Libs.youthBanner)
     implementation(Libs.paging3)
+    implementation(Libs.arouterApi)
     kapt(Libs.arouterCompiler)
 }

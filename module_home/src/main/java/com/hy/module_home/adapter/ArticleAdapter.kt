@@ -7,6 +7,8 @@ import android.widget.TextView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.alibaba.android.arouter.launcher.ARouter
+import com.hy.commom.config.ArouterConfig
 import com.hy.module_home.R
 import com.hy.module_home.bean.Articles
 
@@ -45,11 +47,19 @@ class ArticleAdapter : PagingDataAdapter<Articles.Article, ArticleAdapter.ViewHo
 			it.tvAuthor.text = bean?.chapterName
 			it.tvTitle.text = bean?.title
 		}
+
 		if (bean?.tags?.isNotEmpty() == true) {
 			holder.tvTag.text = bean.tags[0]?.tagName
 			holder.tvTag.visibility = View.VISIBLE
 		} else {
 			holder.tvTag.visibility = View.GONE
+		}
+
+		holder.itemView.setOnClickListener {
+			ARouter.getInstance()
+				.build(ArouterConfig.COMMON_WEBVIEW)
+				.withString("path", bean?.link)
+				.navigation()
 		}
 	}
 }

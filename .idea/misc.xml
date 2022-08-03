@@ -16,6 +16,10 @@
         <entry key="module_home/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="module_my/src/main/res/layout/fragment_my.xml" value="0.3020833333333333" />
         <entry key="module_project/src/main/res/layout/fragment_project.xml" value="0.3020833333333333" />
+        <entry key="module_webview/src/main/res/drawable/ic_launcher_background.xml" value="0.2315" />
+        <entry key="module_webview/src/main/res/drawable/progress_bar.xml" value="0.2315" />
+        <entry key="module_webview/src/main/res/layout/activity_main.xml" value="0.29891304347826086" />
+        <entry key="module_webview/src/main/res/layout/activity_webview.xml" value="0.25" />
         <entry key="modulehome/src/main/res/layout/activity_home_detail.xml" value="0.12952898550724637" />
       </map>
     </option>
