@@ -6,46 +6,93 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="10dp">
 
-    <TextView
-        android:id="@+id/tv_author"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/ll_user"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="16sp"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_title"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="author" />
+        >
 
-    <TextView
-        android:id="@+id/tv_tag"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintLeft_toRightOf="@id/tv_author"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="tag"
-        />
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:textColor="@color/black_666"
+            android:textSize="12sp"
+            tools:text="author" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_666"
+            android:textSize="12sp"
+            tools:text="author" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:singleLine="true"
         android:ellipsize="end"
+        android:maxLines="2"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black_3333"
+        android:textSize="14sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_author"
+        app:layout_constraintTop_toBottomOf="@id/ll_user"
         tools:text="标题"
         />
 
-    <View
+    <LinearLayout
+        android:id="@+id/ll_chapter"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#333333"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        >
+
+        <TextView
+            android:id="@+id/tv_super_chapter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_666"
+            android:textSize="12sp"
+            android:paddingBottom="10dp"
+            android:layout_marginRight="5dp"
+            app:layout_constraintLeft_toRightOf="@id/ll_user"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="广场Tab"
+            />
+
+        <TextView
+            android:id="@+id/tv_chapter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black_666"
+            android:textSize="12sp"
+            android:paddingBottom="10dp"
+            app:layout_constraintLeft_toRightOf="@id/ll_user"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="公众号"
+            />
+    </LinearLayout>
+
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@color/black_999"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent" />-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

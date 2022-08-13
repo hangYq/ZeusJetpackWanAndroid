@@ -1,5 +1,6 @@
 package com.hy.module_home.adapter
 
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,7 +31,9 @@ class ArticleAdapter : PagingDataAdapter<Articles.Article, ArticleAdapter.ViewHo
 
 	class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 		val tvAuthor: TextView = itemView.findViewById(R.id.tv_author)
-		val tvTag: TextView = itemView.findViewById(R.id.tv_tag)
+		val tvTime: TextView = itemView.findViewById(R.id.tv_time)
+		val tvChapter: TextView = itemView.findViewById(R.id.tv_chapter)
+		val superChapter: TextView = itemView.findViewById(R.id.tv_super_chapter)
 		val tvTitle: TextView = itemView.findViewById(R.id.tv_title)
 	}
 
@@ -44,15 +47,11 @@ class ArticleAdapter : PagingDataAdapter<Articles.Article, ArticleAdapter.ViewHo
 	override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 		val bean = getItem(position)
 		holder.let {
-			it.tvAuthor.text = bean?.chapterName
-			it.tvTitle.text = bean?.title
-		}
-
-		if (bean?.tags?.isNotEmpty() == true) {
-			holder.tvTag.text = bean.tags[0]?.tagName
-			holder.tvTag.visibility = View.VISIBLE
-		} else {
-			holder.tvTag.visibility = View.GONE
+			it.tvAuthor.text = if(!TextUtils.isEmpty(bean?.author)) bean?.author else bean?.shareUser?:""
+			it.tvTime.text = bean?.niceShareDate?.toString() ?: ""
+			it.tvTitle.text = bean?.title ?: ""
+			it.superChapter.text = bean?.superChapterName ?: ""
+			it.tvChapter.text = bean?.chapterName ?: ""
 		}
 
 		holder.itemView.setOnClickListener {
