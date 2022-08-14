@@ -51,6 +51,7 @@ class HomeFragment : Fragment() {
 	}
 
 	private fun initData() {
+		binding.includeAppBar.tvAppBarTitle.text = "主页"
 		fetchBanners()
 		fetchArticles()
 	}

@@ -8,6 +8,8 @@
 
 3. 使用 Navigation 创建底部导航，相关文档可以参考[9];
 
+4. 使用 ViewPager2 & TabLayout 创建滑动视图，相关文档可以参考[10];
+
 ## 参考文档
 
 [1] [Use buildSrc to abstract imperative logic](https://docs.gradle.org/current/userguide/organizing_gradle_projects.html#sec:build_sources)
@@ -27,3 +29,5 @@
 [8] [为新设备添加模块](https://developer.android.com/studio/projects/add-app-module)
 
 [9] [Navigation 组件](https://developer.android.com/guide/navigation/navigation-getting-started?hl=zh-cn)
+
+[10] [ViewPager2 组件](https://developer.android.com/guide/navigation/navigation-swipe-view-2)
