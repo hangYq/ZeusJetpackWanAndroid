@@ -1,6 +1,5 @@
 package com.hy.module_home.ui.fragment
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,12 +8,12 @@ import com.hy.commom.base.BaseFragment
 import com.hy.module_home.adapter.ArticleAdapter
 import com.hy.module_home.adapter.ArticleHeaderAdapter
 import com.hy.module_home.databinding.FragmentHomeBinding
-import com.hy.module_home.viewModel.BannerViewModel
+import com.hy.module_home.viewModel.HomeViewModel
 import kotlinx.coroutines.launch
 
-class HomeFragment : BaseFragment<FragmentHomeBinding,ViewModel>(FragmentHomeBinding::inflate) {
+class HomeFragment : BaseFragment<FragmentHomeBinding,HomeViewModel>(FragmentHomeBinding::inflate) {
 
-	override  val mViewModel by lazy { BannerViewModel() }
+	override  val mViewModel by lazy { HomeViewModel() }
 
 	private var recyclerView: RecyclerView? = null
 	private val config by lazy { ConcatAdapter.Config.Builder().setIsolateViewTypes(true).build() }

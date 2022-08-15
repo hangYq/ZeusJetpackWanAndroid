@@ -9,12 +9,10 @@ import com.hy.commom.network.BaseResult
 import com.hy.module_home.repository.HomeRepository
 import com.hy.module_home.bean.Articles
 import com.hy.module_home.bean.BannerItem
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
-class BannerViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
 	private val banners = MutableLiveData<List<BannerItem>?>()
 	private val articles = MutableLiveData<Articles>()
 
