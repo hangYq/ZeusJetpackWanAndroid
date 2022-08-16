@@ -31,3 +31,5 @@
 [9] [Navigation 组件](https://developer.android.com/guide/navigation/navigation-getting-started?hl=zh-cn)
 
 [10] [ViewPager2 组件](https://developer.android.com/guide/navigation/navigation-swipe-view-2)
+
+[11] [Kotlin 的泛型](https://rengwuxian.com/kotlin-generics/)
