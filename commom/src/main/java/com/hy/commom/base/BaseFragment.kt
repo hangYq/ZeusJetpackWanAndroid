@@ -12,8 +12,7 @@ import androidx.viewbinding.ViewBinding
 abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(val bindingBlock: (LayoutInflater, ViewGroup?, Boolean) -> VB) :
 	Fragment() {
 	private var _binding: VB? = null
-	protected val binding get() = _binding!!
-
+	protected val mBinding get() = _binding!!
 	lateinit var mContext: Context
 	abstract val mViewModel: VM
 
@@ -30,7 +29,7 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(val bindingBlock: 
 		savedInstanceState: Bundle?
 	): View? {
 		_binding = bindingBlock(inflater, container, false)
-		return binding.root
+		return mBinding.root
 	}
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

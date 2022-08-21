@@ -21,7 +21,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding,HomeViewModel>(FragmentHom
 	private var adapterIndex = 0
 
 	private fun initAdapter() {
-		recyclerView = binding.rv
+		recyclerView = mBinding.rv
 		recyclerView?.layoutManager = LinearLayoutManager(
 			requireActivity(), RecyclerView.VERTICAL,
 			false,
@@ -31,7 +31,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding,HomeViewModel>(FragmentHom
 
 	override fun initData() {
 		initAdapter()
-		binding.includeAppBar.tvAppBarTitle.text = "主页"
+		mBinding.includeAppBar.tvAppBarTitle.text = "主页"
 		fetchBanners()
 		fetchArticles()
 	}

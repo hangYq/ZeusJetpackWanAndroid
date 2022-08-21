@@ -7,9 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayoutMediator
-import com.hy.module_project.R
 import com.hy.module_project.adapter.ViewPagerAdapter
-import com.hy.module_project.databinding.FragmentNavigationBinding
 import com.hy.module_project.databinding.FragmentProjectBinding
 
 class ProjectFragment : Fragment() {
@@ -20,9 +18,6 @@ class ProjectFragment : Fragment() {
 	private val tabs : List<String> = listOf("体系","导航")
 	private val fragments: List<Fragment> = listOf(SystemFragment(), NavigationFragment())
 
-	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
-	}
 
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,

@@ -1,36 +1,44 @@
 package com.hy.module_project.ui.fragment
 
-
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.alibaba.android.arouter.launcher.ARouter
+import com.hy.commom.base.BaseFragment
+import com.hy.commom.config.ArouterConfig
+import com.hy.module_project.adapter.NavigationAdapter
+import com.hy.module_project.bean.NavigationData
 import com.hy.module_project.databinding.FragmentNavigationBinding
+import com.hy.module_project.viewModel.NavigationViewModel
 
-class NavigationFragment : Fragment() {
-	private var _binding: FragmentNavigationBinding? = null
-	private val binding get() = _binding!!
+class NavigationFragment : BaseFragment<FragmentNavigationBinding, NavigationViewModel>
+	(FragmentNavigationBinding::inflate) {
 
-	override fun onCreate(savedInstanceState: Bundle?) {
-		super.onCreate(savedInstanceState)
+	private lateinit var mRecycleView: RecyclerView
+	override val mViewModel by lazy { NavigationViewModel() }
+
+	override fun initData() {
+		mViewModel.fetchNavigation()
+		mViewModel.navigationList.observe(this) {
+			if (it?.isNotEmpty() == true) {
+				initView(it)
+			}
+			// TODO： 空白页面处理
+		}
 	}
 
-	override fun onCreateView(
-		inflater: LayoutInflater, container: ViewGroup?,
-		savedInstanceState: Bundle?
-	): View? {
-		_binding = FragmentNavigationBinding.inflate(inflater, container, false)
-		return binding.root
+	private fun initView(list: List<NavigationData>) {
+		mRecycleView = mBinding.rv
+		mRecycleView.layoutManager =
+			LinearLayoutManager(requireActivity(), RecyclerView.VERTICAL, false)
+		val adapter = NavigationAdapter(list)
+		adapter.setOnItemClickListener(object : NavigationAdapter.OnItemClickerListener {
+			override fun onItemClick(article: NavigationData.Article?) {
+				ARouter.getInstance()
+					.build(ArouterConfig.COMMON_WEBVIEW)
+					.withString("path", article?.link)
+					.navigation()
+			}
+		})
+		mRecycleView.adapter = adapter
 	}
-
-	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-		super.onViewCreated(view, savedInstanceState)
-	}
-
-	override fun onDestroy() {
-		super.onDestroy()
-		_binding = null
-	}
-
 }
