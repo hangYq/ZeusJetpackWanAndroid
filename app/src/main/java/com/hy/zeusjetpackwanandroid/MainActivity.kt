@@ -2,19 +2,19 @@ package com.hy.zeusjetpackwanandroid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.ViewGroup
+import androidx.core.view.children
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.hy.commom.config.ArouterConfig
 import com.hy.module_home.ui.fragment.HomeFragment
 import com.hy.module_my.ui.fragment.MyFragment
 import com.hy.module_project.ui.fragment.ProjectFragment
 import com.hy.zeusjetpackwanandroid.databinding.ActivityMainBinding
 import com.hy.zeusjetpackwanandroid.viewmodel.HomeViewModel
+
 class MainActivity : AppCompatActivity() {
 	private lateinit var binding: ActivityMainBinding
 
@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
 	private lateinit var navHostFragment: NavHostFragment
 	private lateinit var bottomNav: BottomNavigationView
+	private var mSelectedId = -1
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -38,9 +39,14 @@ class MainActivity : AppCompatActivity() {
 			supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
 		val navController = navHostFragment.navController
 		bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+		// 屏蔽长按吐司
+		(bottomNav.getChildAt(0) as? ViewGroup)?.children?.forEach { it.setOnLongClickListener { true } }
+
 		bottomNav.setupWithNavController(navController)
 		bottomNav.setOnItemSelectedListener {
 			val fragment: Fragment
+			mSelectedId = it.itemId
 			when (it.itemId) {
 				R.id.homeFragment -> {
 					fragment = HomeFragment()
