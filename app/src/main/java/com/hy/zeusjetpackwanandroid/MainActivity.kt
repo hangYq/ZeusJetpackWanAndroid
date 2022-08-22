@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
 
 	private lateinit var navHostFragment: NavHostFragment
 	private lateinit var bottomNav: BottomNavigationView
-	private var mSelectedId = -1
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -46,7 +45,6 @@ class MainActivity : AppCompatActivity() {
 		bottomNav.setupWithNavController(navController)
 		bottomNav.setOnItemSelectedListener {
 			val fragment: Fragment
-			mSelectedId = it.itemId
 			when (it.itemId) {
 				R.id.homeFragment -> {
 					fragment = HomeFragment()
